@@ -30,4 +30,20 @@ public abstract class Plano {
     public void setNivelAcesso(int nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getResolucao() {
+        return resolucao;
+    }
+
+    public void setResolucao(String resolucao) {
+        this.resolucao = resolucao;
+    }
 }

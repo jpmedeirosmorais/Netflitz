@@ -4,7 +4,7 @@ import com.company.models.Midia;
 import com.company.models.Usuario;
 
 public interface AcoesEmVideo {
-    boolean setAberto(boolean statusAberto, Midia midia);
-    boolean setPause(boolean statusPause, Midia midia);
-    void setResolucao(Usuario usuario) throws Exception;
+    void setAberto(boolean statusAberto, Midia midia);
+    void setPause(boolean statusPause, Midia midia) throws Exception;
+    void setResolucao(Usuario usuario, Midia midia) throws Exception;
 }

@@ -2,6 +2,7 @@ package com.company.models.usuario;
 
 import com.company.models.Midia;
 import com.company.models.Usuario;
+import com.company.models.exceptions.VideoFechadoException;
 import com.company.models.midia.Filme;
 import com.company.models.midia.Serie;
 
@@ -17,23 +18,25 @@ public class Perfil implements AcoesEmVideo {
     }
 
     @Override
-    public boolean setAberto(boolean statusAberto, Midia midia) {
-        return statusAberto;
+    public void setAberto(boolean statusAberto, Midia midia) {
+            midia.setAberto(statusAberto);
     }
 
     @Override
-    public boolean setPause(boolean statusPause, Midia midia) {
-        return statusPause;
-    }
-
-    @Override
-    public void setResolucao(Usuario usuario) throws Exception{
-        if(usuario.getPlano().getNivelAcesso() == 1){
-            usuario.
-        }else if(usuario.getPlano().getNivelAcesso() == 2){
-
+    public void setPause(boolean statusPause, Midia midia) throws Exception{
+        if (midia.getAberto()){
+            midia.setPause(statusPause);
         }
+        throw new VideoFechadoException();
+    }
 
+    @Override
+    public void setResolucao(Usuario usuario, Midia midia) throws Exception{
+        if (midia.getAberto()) {
+            midia.setResolucao(usuario.getPlano().getResolucao());
+        }else {
+            throw new VideoFechadoException();
+        }
     }
 
     public String getNome() {
