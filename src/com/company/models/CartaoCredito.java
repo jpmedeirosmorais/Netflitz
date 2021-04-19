@@ -2,13 +2,23 @@ package com.company.models;
 
 public class CartaoCredito {
     private int numeroCartao;
+    private double saldo;
     private boolean vencido;
     private Usuario usuario;
 
-    public CartaoCredito(int numeroCartao, boolean vencido, Usuario usuario) {
+    public CartaoCredito(int numeroCartao, boolean vencido, Usuario usuario, double saldo) {
         this.numeroCartao = numeroCartao;
         this.vencido = vencido;
         this.usuario = usuario;
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public int getNumeroCartao() {

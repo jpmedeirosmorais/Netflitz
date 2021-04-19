@@ -7,12 +7,22 @@ public abstract class Plano {
     private int nivelAcesso;
     private Usuario usuario;
     private String resolucao;
+    private double valor;
 
-    public Plano(String nomePlano, int nivelAcesso, String resolucao) {
+    public Plano(String nomePlano, int nivelAcesso, String resolucao, double valor) {
         this.nomePlano = nomePlano;
         this.nivelAcesso = nivelAcesso;
         this.resolucao =  resolucao;
+        this.valor = valor;
 
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     public String getNomePlano() {

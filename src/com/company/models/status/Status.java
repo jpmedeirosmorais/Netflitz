@@ -52,6 +52,7 @@ public class Status {
         System.out.println("Cartão de crédito");
         System.out.println("Número do cartão: " + cartaoCredito.getNumeroCartao());
         System.out.println("Titular do cartao: " + cartaoCredito.getUsuario().getNome());
+        System.out.println("Limite disponível: " + cartaoCredito.getSaldo());
         System.out.println("--------------------------");
         System.out.println("");
     }

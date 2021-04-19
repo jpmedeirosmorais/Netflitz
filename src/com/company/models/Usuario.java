@@ -1,5 +1,6 @@
 package com.company.models;
 
+import com.company.models.exceptions.CartaoSemSaldoException;
 import com.company.models.exceptions.CartaoVencido;
 import com.company.models.usuario.AcoesPagamento;
 import com.company.models.usuario.Perfil;
@@ -21,7 +22,10 @@ public class Usuario implements AcoesPagamento {
     public boolean getPagamento(CartaoCredito cartaoCredito)throws Exception{
         if(cartaoCredito.isVencido()){
             throw new CartaoVencido();
+        }else if(cartaoCredito.getSaldo()<this.getPlano().getValor()){
+            throw new CartaoSemSaldoException();
         }
+            cartaoCredito.setSaldo(cartaoCredito.getSaldo() - this.getPlano().getValor());
             return cartaoCredito.isVencido();
     }
 
