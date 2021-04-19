@@ -1,4 +1,9 @@
 package com.company.models.midia;
 
-public class Serie {
+import com.company.models.Midia;
+
+
+
+public class Serie extends Midia {
+
 }

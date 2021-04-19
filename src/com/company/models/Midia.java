@@ -1,5 +1,6 @@
 package com.company.models;
 
-public interface Midia {
-    public boolean  Play();
+public class Midia {
+    private String titulo;
+
 }
