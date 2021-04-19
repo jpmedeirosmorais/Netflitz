@@ -2,7 +2,7 @@ package com.company.models;
 
 import java.util.ResourceBundle;
 
-public class Midia {
+public abstract class Midia {
     private String titulo;
     private String resolucao;
     private Boolean pause;
@@ -14,6 +14,8 @@ public class Midia {
         this.pause = true;
         this.aberto = false;
     }
+
+    public abstract void statusMidia();
 
     public Boolean getAberto() {
         return aberto;

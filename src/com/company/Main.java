@@ -36,11 +36,15 @@ public class Main {
 
         try {
             jp.setResolucao(usuarioJoao, elCamino);
-            System.out.println(elCamino.getResolucao());
+            System.out.println("Resolução da midia em "+elCamino.getResolucao());
         }catch (Exception videoFechado){
             System.out.println(videoFechado.getMessage());
         }
 
         status.statusUsuario(usuarioJoao);
+        status.statusMidia(breakingBad);
+        status.statusMidia(elCamino);
+        status.statusPlano(planoIntermediario);
+        status.statusCartaoCredito(cartaoJoao);
     }
 }

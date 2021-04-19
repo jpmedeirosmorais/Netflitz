@@ -62,4 +62,12 @@ public class Perfil implements AcoesEmVideo {
     public void setFilme(Filme filme) {
         this.filme = filme;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
