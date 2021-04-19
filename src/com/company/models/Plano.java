@@ -6,10 +6,13 @@ public abstract class Plano {
     private String nomePlano;
     private int nivelAcesso;
     private Usuario usuario;
+    private String resolucao;
 
-    public Plano(String nomePlano, int nivelAcesso) {
+    public Plano(String nomePlano, int nivelAcesso, String resolucao) {
         this.nomePlano = nomePlano;
         this.nivelAcesso = nivelAcesso;
+        this.resolucao =  resolucao;
+
     }
 
     public String getNomePlano() {

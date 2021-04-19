@@ -9,6 +9,7 @@ public class Usuario implements AcoesPagamento {
     private String email;
     private CartaoCredito cartaoCredito;
     private Perfil perfil;
+    private Plano plano;
 
 
     public Usuario(String nome, String email) {
@@ -17,11 +18,19 @@ public class Usuario implements AcoesPagamento {
     }
 
     @Override
-    public boolean getCartao(CartaoCredito cartaoCredito)throws Exception{
+    public boolean getPagamento(CartaoCredito cartaoCredito)throws Exception{
         if(cartaoCredito.isVencido()){
             throw new CartaoVencido();
         }
             return cartaoCredito.isVencido();
+    }
+
+    public Plano getPlano() {
+        return plano;
+    }
+
+    public void setPlano(Plano plano) {
+        this.plano = plano;
     }
 
     public String getNome() {
